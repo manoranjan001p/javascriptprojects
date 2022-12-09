@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #i1,#i2,#i3{
+            border-color: blue;
+            border:solid;
+            width:200px ;
+            height:220px;
+            float:left;
+        }
+        #p1,#p3{
+                    background-color: blue;
+                    margin-top: 0px;
+                    height:35px;
+                    text-align: center;
+                    padding-top:15px;
+                    color:white;
+                    margin-bottom:0;
+                    
+        }
+        #t1,#t2{
+            margin-top:0px;
+            width: 65%;
+            border-radius: 5px;
+            border-width:3px ;
+            padding-top: 10px;
+        }
+        #img{
+        width:100%;
+        height: 135px;    
+        }
+        #i2{
+            overflow: scroll;
+            height: 220px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+   <div id="i1">
+    <p id="p1">Person A</p>
+    <img src="flo.jpg" alt="flow" id="img">
+     
+    
+     <input type="text" id="t1" placeholder="Enter message">
+     <button id="b1" onclick = punch()>punch</button>
+   </div>
+     <div id="i2">
+
+     </div>
+   <div id="i3">
+     <p id="p3">Person B</p>
+     <img src="flo.jpg" alt="flow" id="img">
+
+     <input type="text" id="t2"  placeholder="Enter message">
+     <button id="b1" onclick=punch()>punch</button>
+   </div> 
+</div>
+    
+</body>
+</html>
+<script>
+    function punch()
+    {
+        t=document.getElementById("t1").value;
+        t2=document.getElementById("t2").value;
+        tt=document.createElement("p");
+        if(t!="")
+        {
+        ttt=document.createTextNode(t);
+        tt.appendChild(ttt);
+        tt.style.color='red';
+        u=document.getElementById("i2");
+        u.appendChild(tt);
+        document.getElementById('t1').value="";
+        }
+
+        else if(t2!="")
+        {
+            ttt=document.createTextNode(t2);
+        tt.appendChild(ttt);
+        tt.style.color='blue';
+        u=document.getElementById("i2");
+        u.appendChild(tt);
+        
+        document.getElementById('t2').value="";
+
+        }
+
+    
+    }
+   
+
+    
+
+
+</script>
